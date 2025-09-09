@@ -1,7 +1,4 @@
-"use client";
-
-import useStore, { StoreState, Todo } from "@/store/store";
-import { memo, useState } from "react";
+import { NewTodo, TodoList } from "@/components/Todo";
 
 export default function Home() {
   return (
@@ -10,69 +7,10 @@ export default function Home() {
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <TodoList />
         </div>
-        <NewTodo />
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <NewTodo />
+        </div>
       </main>
     </div>
   );
 }
-
-const selectAddTodo = (state: StoreState) => state.addTodo;
-
-const NewTodo = () => {
-  const addTodo = useStore(selectAddTodo);
-  const [text, setText] = useState("");
-  const onAdd = () => {
-    addTodo(text);
-    setText("");
-  };
-
-  return (
-    <div className="flex gap-2">
-      <input
-        className="border border-black rounded-xs"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <button
-        className="bg-blue-800 text-white p-2 rounded-sm disabled:opacity-60"
-        onClick={onAdd}
-        disabled={!text}
-      >
-        Add
-      </button>
-    </div>
-  );
-};
-
-const selectTodos = (state: StoreState) => state.todos;
-
-const TodoList = () => {
-  const todos = useStore(selectTodos);
-  return (
-    <div className="w-3xs flex-col">
-      {todos.map((todo) => (
-        <MemoedTodoItem key={todo.id} todo={todo} />
-      ))}
-    </div>
-  );
-};
-
-const selectRemoveTodo = (state: StoreState) => state.removeTodo;
-const selectToggleTodo = (state: StoreState) => state.toggleTodo;
-
-const TodoItem = ({ todo }: { todo: Todo }) => {
-  const removeTodo = useStore(selectRemoveTodo);
-  const toggleTodo = useStore(selectToggleTodo);
-
-  return (
-    <div className="w-full flex justify-around gap-4 mb-2">
-      <input type="checkbox" checked={todo.done} onChange={() => toggleTodo(todo.id)} />
-      <span className={todo.done ? "line-through" : ""}>{todo.title}</span>
-      <button className="bg-red-700 text-white p-1 rounded-md" onClick={() => removeTodo(todo.id)}>
-        Delete
-      </button>
-    </div>
-  );
-};
-
-const MemoedTodoItem = memo(TodoItem);

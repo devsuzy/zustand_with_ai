@@ -1,17 +1,5 @@
 import { create } from "zustand";
-
-export type Todo = {
-  id: number;
-  title: string;
-  done: boolean;
-};
-
-export type StoreState = {
-  todos: Todo[];
-  addTodo: (title: string) => void;
-  removeTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
-};
+import { StoreState } from "./type";
 
 let nextId = 0;
 
