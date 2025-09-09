@@ -18,6 +18,7 @@ export const NewTodo = () => {
       <input
         className="border border-black rounded-xs"
         value={text}
+        placeholder="할 일을 입력하세요."
         onChange={(e) => setText(e.target.value)}
       />
       <button
