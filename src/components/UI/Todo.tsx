@@ -20,15 +20,17 @@ export default function TodoComponents() {
     return unsubscribe;
   }, []);
 
-  if (!isHydrated) {
-    return <LoadingSpinner />;
-  }
-
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <TodayDate />
-      <TodoList />
-      <NewTodo />
+    <div className="w-80 max-w-80 flex flex-col gap-16 items-center">
+      {!isHydrated ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="flex flex-col gap-8">
+          <TodayDate />
+          <TodoList />
+          <NewTodo />
+        </div>
+      )}
     </div>
   );
 }

@@ -10,15 +10,15 @@ export const TodoList = () => {
 
   if (todos.length === 0) {
     return (
-      <div className="w-full max-w-md text-center text-gray-500">
-        <p className="text-lg font-medium">⚠️ 할 일이 없습니다.</p>
-        <p className="text-sm mt-2">새로운 할 일을 추가해보세요!</p>
+      <div className="w-full text-center text-gray-500">
+        <p className="text-lg font-medium">⚠️ You have nothing to do today.</p>
+        <p className="text-sm mt-2">Add a new to-do!</p>
       </div>
     );
   }
 
   return (
-    <div className="min-w-72 max-w-80 flex-col">
+    <div className="w-full flex flex-col gap-2">
       {todos.map((todo) => (
         <MemoedTodoItem key={todo.id} todo={todo} />
       ))}

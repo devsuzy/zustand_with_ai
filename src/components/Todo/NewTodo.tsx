@@ -23,9 +23,9 @@ export const NewTodo = () => {
   return (
     <div className="flex gap-2">
       <input
-        className="border border-black rounded-xs"
+        className="w-full py-1 px-2 border border-violet-300 rounded focus:outline-none focus:ring-2 focus:ring-violet-500"
         value={text}
-        placeholder="할 일을 입력하세요."
+        placeholder="Enter your to-do list."
         onChange={(e) => setText(e.target.value)}
         onKeyDown={handleKeyDown}
       />
