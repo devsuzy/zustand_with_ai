@@ -30,7 +30,7 @@ export const NewTodo = () => {
         onKeyDown={handleKeyDown}
       />
       <button
-        className="text-lg bg-blue-700 hover:bg-blue-800 text-white py-2 px-3 rounded-sm disabled:opacity-60"
+        className="text-lg bg-violet-500 hover:bg-violet-600 text-white py-2 px-3 rounded-sm disabled:opacity-60"
         onClick={onAdd}
         disabled={!text}
       >

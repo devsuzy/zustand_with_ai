@@ -18,7 +18,7 @@ export const TodoList = () => {
   }
 
   return (
-    <div className="min-w-60 max-w-80 flex-col">
+    <div className="min-w-72 max-w-80 flex-col">
       {todos.map((todo) => (
         <MemoedTodoItem key={todo.id} todo={todo} />
       ))}

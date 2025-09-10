@@ -46,8 +46,13 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
   };
 
   return (
-    <div className="w-full flex justify-between gap-4 mb-2">
-      <input type="checkbox" checked={todo.done} onChange={() => toggleTodo(todo.id)} />
+    <div className="w-full flex items-center justify-between gap-4 mb-4">
+      <input
+        type="checkbox"
+        className="w-5 h-5"
+        checked={todo.done}
+        onChange={() => toggleTodo(todo.id)}
+      />
 
       {isEditing ? (
         <div className="flex-1 flex items-center gap-2">
@@ -81,21 +86,21 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
       )}
 
       {!isEditing && (
-        <div className="flex gap-1">
+        <div className="flex text-base">
+          {!todo.done ? (
+            <button
+              onClick={() => setIsEditing(true)}
+              className="bg-white hover:bg-slate-100 py-1 px-2 rounded"
+              disabled={todo.done}
+              title="편집"
+            >
+              ✏️
+            </button>
+          ) : (
+            <></>
+          )}
           <button
-            onClick={!todo.done ? () => setIsEditing(true) : undefined}
-            className={`text-white py-1 px-2 rounded text-base transition-colors ${
-              !todo.done
-                ? "bg-blue-400 hover:bg-blue-500 cursor-pointer"
-                : "bg-gray-400 hover:bg-gray-500 cursor-not-allowed"
-            }`}
-            disabled={todo.done}
-            title={todo.done ? "완료된 할 일은 편집할 수 없습니다" : "편집"}
-          >
-            ✏️
-          </button>
-          <button
-            className="bg-red-400 hover:bg-red-500 text-white py-1 px-2 rounded text-base transition-colors"
+            className="bg-white hover:bg-slate-100 py-1 px-2 rounded"
             onClick={() => removeTodo(todo.id)}
             title="삭제"
           >

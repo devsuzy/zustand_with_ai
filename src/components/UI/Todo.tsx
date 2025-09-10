@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useStore from "@/model/useStore";
 import { NewTodo, TodoList } from "../Todo";
 import LoadingSpinner from "./LoadingSpinner";
+import TodayDate from "./TodayDate";
 
 export default function TodoComponents() {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -24,14 +25,10 @@ export default function TodoComponents() {
   }
 
   return (
-    <div className="flex flex-col gap-6 items-center">
-      <h2 className="text-4xl text-center font-bold">📝할 일 목록</h2>
-      <div className="flex gap-4 items-center flex-col sm:flex-row">
-        <TodoList />
-      </div>
-      <div className="flex gap-4 items-center flex-col sm:flex-row">
-        <NewTodo />
-      </div>
+    <div className="flex flex-col gap-16 items-center">
+      <TodayDate />
+      <TodoList />
+      <NewTodo />
     </div>
   );
 }
