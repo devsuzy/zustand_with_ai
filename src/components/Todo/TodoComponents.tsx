@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import useStore from "@/lib/useStore";
-import { NewTodo, TodoList } from "../Todo";
-import LoadingSpinner from "./LoadingSpinner";
-import TodayDate from "./TodayDate";
+import { NewTodo, TodoList } from ".";
+import LoadingSpinner from "../UI/LoadingSpinner";
+import TodayDate from "../UI/TodayDate";
 
 export default function TodoComponents() {
   const [isHydrated, setIsHydrated] = useState(false);

@@ -1,5 +1,5 @@
 import Header from "@/components/UI/Header";
-import TodoComponents from "@/components/UI/Todo";
+import TodoComponents from "@/components/Todo/TodoComponents";
 
 export default function Home() {
   return (

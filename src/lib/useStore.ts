@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { StoreState, Todo } from "./type";
+import { StoreState, Todo } from "@/types/type";
 import { persist } from "zustand/middleware";
 
 const generatedId = (existingTodos: Todo[]): number => {
