@@ -1,7 +1,14 @@
 ## 📝 Todo App
+![Vercel](https://img.shields.io/badge/deployed%20on-vercel-blue)
+![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+
 Zustand와 Next.js를 활용하여 만든 Todo 애플리케이션입니다.
 
-### 🚀 라이브 데모
+### 📱 스크린샷
+<img width="1917" height="901" alt="todoApp" src="https://github.com/user-attachments/assets/3f96215a-4011-43c5-a5c2-71c2e4652bca" />
+
+### 🔗 URL
 **[https://zustand-with-ai.vercel.app/](https://zustand-with-ai.vercel.app/)**
 
 ### ✨ 주요 기능
@@ -44,7 +51,7 @@ Zustand와 Next.js를 활용하여 만든 Todo 애플리케이션입니다.
 └── 📄 postcss.config.js     # PostCSS 설정
 ```
 
-### 설치 및 실행
+### 🚀 설치 및 실행
 ```bash
 # 저장소 클론
 git clone https://github.com/your-username/zustand-todo-app.git
