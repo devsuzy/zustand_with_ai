@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import useStore from "@/model/useStore";
-import { StoreState } from "@/model/type";
+import useStore from "@/lib/useStore";
+import { StoreState } from "@/types/type";
 
 const selectAddTodo = (state: StoreState) => state.addTodo;
 

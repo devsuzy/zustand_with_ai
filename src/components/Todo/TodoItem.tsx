@@ -1,7 +1,7 @@
 "use client";
 import { memo, useEffect, useRef, useState } from "react";
-import { StoreState, Todo } from "@/model/type";
-import useStore from "@/model/useStore";
+import { StoreState, Todo } from "@/types/type";
+import useStore from "@/lib/useStore";
 
 const selectRemoveTodo = (state: StoreState) => state.removeTodo;
 const selectToggleTodo = (state: StoreState) => state.toggleTodo;

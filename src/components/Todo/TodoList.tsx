@@ -1,6 +1,6 @@
 "use client";
-import useStore from "@/model/useStore";
-import { StoreState } from "@/model/type";
+import useStore from "@/lib/useStore";
+import { StoreState } from "@/types/type";
 import { MemoedTodoItem } from "./TodoItem";
 
 const selectTodos = (state: StoreState) => state.todos;

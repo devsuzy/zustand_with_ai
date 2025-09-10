@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import useStore from "@/model/useStore";
+import useStore from "@/lib/useStore";
 import { NewTodo, TodoList } from "../Todo";
 import LoadingSpinner from "./LoadingSpinner";
 import TodayDate from "./TodayDate";
