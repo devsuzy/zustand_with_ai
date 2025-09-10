@@ -9,4 +9,5 @@ export type StoreState = {
   addTodo: (title: string) => void;
   removeTodo: (id: number) => void;
   toggleTodo: (id: number) => void;
+  updatedTodo: (id: number, title: string) => void;
 };

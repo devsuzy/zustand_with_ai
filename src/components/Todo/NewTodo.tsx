@@ -8,9 +8,16 @@ const selectAddTodo = (state: StoreState) => state.addTodo;
 export const NewTodo = () => {
   const addTodo = useStore(selectAddTodo);
   const [text, setText] = useState("");
+
   const onAdd = () => {
     addTodo(text);
     setText("");
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onAdd();
+    }
   };
 
   return (
@@ -20,9 +27,10 @@ export const NewTodo = () => {
         value={text}
         placeholder="할 일을 입력하세요."
         onChange={(e) => setText(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button
-        className="bg-blue-800 text-white p-2 rounded-sm disabled:opacity-60"
+        className="text-lg bg-blue-700 hover:bg-blue-800 text-white py-2 px-3 rounded-sm disabled:opacity-60"
         onClick={onAdd}
         disabled={!text}
       >

@@ -26,6 +26,12 @@ const useStore = create<StoreState>()(
         set((prev) => ({
           todos: prev.todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo)),
         })),
+      updatedTodo: (id, title) =>
+        set((prev) => ({
+          todos: prev.todos.map((todo) =>
+            todo.id === id ? { ...todo, title: title.trim() } : todo
+          ),
+        })),
     }),
     {
       name: "todo-storage",
