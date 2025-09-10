@@ -6,7 +6,7 @@
 Zustand와 Next.js를 활용하여 만든 Todo 애플리케이션입니다.
 
 ### 📱 스크린샷
-<img width="592" height="702" alt="todoApp1" src="https://github.com/user-attachments/assets/bfba87b8-f496-474c-981e-211369e0ab7f" />
+<img width="392" height="502" alt="todoApp1" src="https://github.com/user-attachments/assets/bfba87b8-f496-474c-981e-211369e0ab7f" />
 
 
 ### 🔗 URL
