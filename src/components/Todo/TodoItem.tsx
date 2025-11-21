@@ -51,7 +51,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
         <input
           type="checkbox"
           id={String(todo.id)}
-          className=" min-w-5 min-h-5"
+          className="bg-violet-800 hover:bg-violet-600 text-white min-w-5 min-h-5"
           checked={todo.done}
           onChange={() => toggleTodo(todo.id)}
         />
@@ -69,7 +69,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
             />
             <button
               onClick={handleSave}
-              className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-base transition-colors"
+              className="px-2 py-1 rounded text-base transition-colors"
               disabled={!editText.trim()}
             >
               ✓
@@ -93,7 +93,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
           {!todo.done ? (
             <button
               onClick={() => setIsEditing(true)}
-              className="bg-white hover:bg-slate-100 py-1 px-2 rounded"
+              className="py-1 px-2 rounded"
               disabled={todo.done}
               title="편집"
             >
@@ -103,7 +103,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
             <></>
           )}
           <button
-            className="bg-white hover:bg-slate-100 py-1 px-2 rounded"
+            className="py-1 px-2 rounded"
             onClick={() => removeTodo(todo.id)}
             title="삭제"
           >
