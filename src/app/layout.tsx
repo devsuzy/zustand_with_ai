@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kode_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/app/ThemeProvider";
 
 const KodeMono = Kode_Mono({
   variable: "--font-kode-mono",
@@ -21,7 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${KodeMono.variable} antialiased`}>{children}</body>
+      <body className={`${KodeMono.variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider
+>
+      </body>
     </html>
   );
 }

@@ -23,14 +23,14 @@ export const NewTodo = () => {
   return (
     <div className="flex gap-2">
       <input
-        className="w-full py-1 px-2 border border-violet-300 rounded focus:outline-none focus:ring-2 focus:ring-violet-500"
+        className="w-full py-1 px-2 border border-violet-300 rounded focus:outline-none focus:ring-2 focus:ring-violet-500 dark:text-gray-100"
         value={text}
         placeholder="Enter your to-do list."
         onChange={(e) => setText(e.target.value)}
         onKeyDown={handleKeyDown}
       />
       <button
-        className="text-lg bg-violet-500 hover:bg-violet-600 text-white py-2 px-3 rounded-sm disabled:opacity-60"
+        className="text-lg bg-violet-500 dark:bg-violet-800 hover:bg-violet-600 text-white py-2 px-3 rounded-sm disabled:opacity-60"
         onClick={onAdd}
         disabled={!text}
       >
